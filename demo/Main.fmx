@@ -1,0 +1,57 @@
+object Form5: TForm5
+  Left = 0
+  Top = 0
+  Caption = 'Form5'
+  ClientHeight = 480
+  ClientWidth = 323
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object mmo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Client
+    Size.Width = 323.000000000000000000
+    Size.Height = 256.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 319.000000000000000000
+    Viewport.Height = 252.000000000000000000
+  end
+  object spl1: TSplitter
+    Align = Bottom
+    Cursor = crVSplit
+    MinSize = 20.000000000000000000
+    Position.Y = 256.000000000000000000
+    Size.Width = 323.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object vrtscrlbx1: TVertScrollBox
+    Align = Bottom
+    Position.Y = 296.000000000000000000
+    Size.Width = 323.000000000000000000
+    Size.Height = 184.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Viewport.Width = 323.000000000000000000
+    Viewport.Height = 184.000000000000000000
+    object emjpnl1: TEmojiPanel
+      Background.Color = claSnow
+      Background.Kind = Solid
+      EmoHeight = 32.000000000000000000
+      EmoWidth = 32.000000000000000000
+      Indent = 10.000000000000000000
+      Align = Client
+      AutoTranslate = False
+      CanFocus = False
+      ClipChildren = True
+      Size.Width = 323.000000000000000000
+      Size.Height = 184.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+  end
+end

@@ -1,0 +1,1807 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Condition="Exists('$(BDS)\bin\CodeGear.Deployment.targets')" Project="$(BDS)\bin\CodeGear.Deployment.targets"/>
+    <ProjectExtensions>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <PropertyGroup>
+        <DeviceId Condition="'$(Platform)'=='Android'">8c91d16a7d24</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice32'"/>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
+        <DeviceId Condition="'$(Platform)'=='iOSSimulator'">iPhone5</DeviceId>
+    </PropertyGroup>
+    <ItemGroup Condition="'$(Platform)'=='iOSDevice64'"/>
+    <ItemGroup Condition="'$(Platform)'=='Win64'"/>
+    <ItemGroup Condition="'$(Platform)'=='iOSDevice32'"/>
+    <ItemGroup Condition="'$(Platform)'=='Win32'">
+        <DeployFile Include="Win32\Debug\demo.exe" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\</RemoteDir>
+            <RemoteName>demo.exe</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='OSX32'">
+        <DeployFile Include="$(BDS)\Redist\osx32\libcgsqlite3.dylib">
+            <RemoteDir>demo.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libcgsqlite3.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib">
+            <RemoteDir>demo.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libcgunwind.1.0.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='Android'">
+        <DeployFile Include="..\smiles\smile_27.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_27.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_36.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_36.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_28.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_28.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_19.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_19.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_80.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_80.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\res\drawable-small\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage426</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_38.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_38.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_54.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_54.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_71.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_71.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_11.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_11.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_30.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_30.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_36.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_36.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_17.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_17.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_26.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_26.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_51.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_51.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_07.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_07.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_53.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_53.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\splash_image_def.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\res\drawable\</RemoteDir>
+            <RemoteName>splash_image_def.xml</RemoteName>
+            <DeployClass>AndroidSplashImageDef</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_77.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_77.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_89.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_89.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_20.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_20.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_50.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_50.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_88.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_88.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_00.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_00.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_92.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_92.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_63.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_63.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_64.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_64.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_30.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_30.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_31.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_31.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_27.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_27.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_34.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_34.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_28.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_28.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_40.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_40.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\res\drawable-large\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage640</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_74.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_74.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_79.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_79.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_77.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_77.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_85.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_85.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_45.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_45.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_02.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_02.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_62.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_62.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_46.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_46.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\styles.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\res\values\</RemoteDir>
+            <RemoteName>styles.xml</RemoteName>
+            <DeployClass>AndroidSplashStyles</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_91.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_91.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_18.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_93.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_93.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_12.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_12.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_14.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_14.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_87.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_87.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_82.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_82.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_87.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_87.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_33.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_33.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_67.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_67.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_21.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_21.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_04.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_04.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_40.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_40.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_72.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_72.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_82.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_82.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_18.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_05.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_05.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_75.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_75.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\res\drawable-hdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon72</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_75.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_75.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_90.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_90.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_05.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_05.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_73.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_73.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_11.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_11.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\library\lib\mips\</RemoteDir>
+            <RemoteName>libdemo.so</RemoteName>
+            <DeployClass>AndroidLibnativeMipsFile</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_03.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_03.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_81.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_81.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_86.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_86.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_24.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_24.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_83.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_83.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_84.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_84.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\</RemoteDir>
+            <RemoteName>AndroidManifest.xml</RemoteName>
+            <DeployClass>ProjectAndroidManifest</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon144</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_52.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_52.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_19.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_19.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_29.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_29.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_44.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_44.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\res\drawable-xhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon96</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_01.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_01.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_62.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_62.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_71.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_71.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_84.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_84.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_72.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_72.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_44.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_44.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_61.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_61.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_61.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_61.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_91.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_91.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_92.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_92.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_04.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_04.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_76.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_76.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\res\drawable-xlarge\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage960</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_08.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_08.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_65.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_65.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_23.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_23.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(NDKBasePath)\prebuilt\android-arm\gdbserver\gdbserver" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>gdbserver</RemoteName>
+            <DeployClass>AndroidGDBServer</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_13.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_13.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_89.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_89.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_70.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_70.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_67.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_67.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\res\drawable-normal\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage470</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_51.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_51.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_60.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_60.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_14.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_14.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_02.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_02.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_01.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_01.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_33.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_33.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_43.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_43.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_09.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_09.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_55.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_55.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_93.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_93.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_56.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_56.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_79.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_79.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_23.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_23.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_17.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_17.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_20.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_20.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_49.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_49.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_56.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_56.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_31.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_31.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_34.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_34.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_26.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_26.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_00.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_00.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_39.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_39.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_86.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_86.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_88.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_88.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_41.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_41.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_42.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_42.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_49.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_49.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_22.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_22.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_15.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_15.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_32.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_32.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_41.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_41.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_74.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_74.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_25.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_25.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_15.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_15.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_37.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_37.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_66.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_66.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_42.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_42.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_32.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_32.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_68.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_68.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_16.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_16.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\res\drawable-mdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon48</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_39.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_39.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\classes.dex" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\classes\</RemoteDir>
+            <RemoteName>classes.dex</RemoteName>
+            <DeployClass>AndroidClassesDexFile</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_50.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_50.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_68.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_68.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_60.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_60.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_69.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_69.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_81.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_81.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_38.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_38.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_24.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_24.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_83.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_83.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_09.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_09.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\res\drawable-ldpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon36</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_54.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_54.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_78.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_78.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_45.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_45.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_80.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_80.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_46.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_46.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_13.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_13.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_16.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_16.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_90.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_90.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_52.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_52.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_12.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_12.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_21.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_21.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_76.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_76.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_37.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_37.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_22.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_22.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_65.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_65.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_07.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_07.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_63.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_63.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_70.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_70.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\library\lib\armeabi\</RemoteDir>
+            <RemoteName>libdemo.so</RemoteName>
+            <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_55.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_55.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_64.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_64.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_08.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_08.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_73.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_73.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_69.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_69.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_58.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_58.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\libdemo.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libdemo.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_66.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_66.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_10.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_10.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_25.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_25.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_10.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_10.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_43.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_43.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_78.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_78.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_85.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_85.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_03.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_03.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_29.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_29.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_58.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_58.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\smiles\smile_53.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>demo\assets\smiles\</RemoteDir>
+            <RemoteName>smile_53.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='iOSSimulator'">
+        <DeployFile Include="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib">
+            <RemoteDir>demo.app\</RemoteDir>
+            <RemoteName>libcgunwind.1.0.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\iossimulator\libPCRE.dylib">
+            <RemoteDir>demo.app\</RemoteDir>
+            <RemoteName>libPCRE.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
+</Project>

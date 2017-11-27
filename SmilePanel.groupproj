@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E463DC57-9520-41FD-BEC0-8A4062D7A2FB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Package\EmojiPanel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="demo\demo.dproj">
+            <Dependencies>Package\EmojiPanel.dproj</Dependencies>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="EmojiPanel">
+        <MSBuild Projects="Package\EmojiPanel.dproj"/>
+    </Target>
+    <Target Name="EmojiPanel:Clean">
+        <MSBuild Projects="Package\EmojiPanel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EmojiPanel:Make">
+        <MSBuild Projects="Package\EmojiPanel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="demo" DependsOnTargets="EmojiPanel">
+        <MSBuild Projects="demo\demo.dproj"/>
+    </Target>
+    <Target Name="demo:Clean" DependsOnTargets="EmojiPanel:Clean">
+        <MSBuild Projects="demo\demo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="demo:Make" DependsOnTargets="EmojiPanel:Make">
+        <MSBuild Projects="demo\demo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="EmojiPanel;demo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="EmojiPanel:Clean;demo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="EmojiPanel:Make;demo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
